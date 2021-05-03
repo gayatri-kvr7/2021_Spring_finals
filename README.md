@@ -1,4 +1,5 @@
-**Drug-Related Fatalities After Providing Medical Treatment**
+# **Drug-Related Fatalities After Providing Medical Treatment**
+
 Team Members: 
 a) Gayatri Kallakuri (gayatri7), GitHub: gayatri-kvr7
 b) Shreya Girdhar (girdhar4), GitHub: girdhar4
