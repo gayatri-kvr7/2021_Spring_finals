@@ -13,6 +13,20 @@ def EDA_dataframe(df):
     The number of null values in each column - This helps us decide if we can drop these rows or do we need to perform
     certain process on that particular data to include these rows
     Datatype of each column to figure out how to process the values in that column
+
+    >>> df=pd.read_csv("DocTest1.csv")
+    >>> EDA_dataframe(df)
+    Top 5 rows:    Name Place
+    0   Joe    US
+    1  Lara    UK
+    The number of rows are:2. the number of columns are: 2
+    The number of null values in each column: Name     0
+    Place    0
+    dtype: int64
+    The datatype of each column is Name     object
+    Place    object
+    dtype: object
+
     """
     print("Top 5 rows: {}".format(df.head()))
     print("The number of rows are:{}. the number of columns are: {}".format(df.shape[0], df.shape[1]))
@@ -27,6 +41,15 @@ def extract_year(some_data):
     :param some_data: Input Dataframe for which we want to get an year column
     :return: Returning the same dataframe with an Output Year Column added to it. This Column contains the Year
     information which is extracted from the DataTime Column
+    >>> df=pd.read_csv("DocTest2.csv")
+    >>> extract_year(df)
+       ID          Date  FiscalYear
+    0   1  6/28/14 0:00        2014
+    1   2  3/21/13 0:00        2013
+    2   3  3/13/16 0:00        2016
+    3   4  3/31/16 0:00        2016
+    4   5  2/13/13 0:00        2013
+
     """
     some_data['FiscalYear'] = pd.DatetimeIndex(some_data['Date']).year
     some_data['FiscalYear'] = some_data['FiscalYear'].fillna(0).astype(np.int64)
@@ -63,6 +86,7 @@ def accidental_ethanol_death(some_data):
 
     :param some_data: Dataframe from where we want to filter the Manner of Death as Accidental
     :return: Dataframe with Manner of Death as Accident for Ethanol
+
     """
     some_data.loc[some_data.MannerofDeath == "accident", "MannerofDeath"] = "Accident"
     some_data.loc[some_data.MannerofDeath == "ACCIDENT", "MannerofDeath"] = "Accident"
@@ -78,11 +102,16 @@ def grouped_drugs(some_data):
     :param some_data: Input Dataframe from which we want to extract information for these particular drugs
     :return: returning the grouped data with details of deaths from two drugs grouped up to Manner of Death, sex and
     Fiscal Year
+    >>> df4=pd.read_csv("Doc_Test4.csv")
+    >>> grouped_drugs(df4)
+           MannerofDeath Sex FiscalYear  Morphine_NotHeroin  Ethanol
+    0           Hospital   A       2014                   1        1
+    1  Social Distancing   B       2015                   1        1
     """
     some_data1 = some_data.groupby(["MannerofDeath", "Sex", "FiscalYear"]).agg(
-        { "Morphine_NotHeroin": "count", "Ethanol": "count" })
+        {"Morphine_NotHeroin": "count", "Ethanol": "count" })
     some_data1.reset_index(inplace=True)
-    some_data1.drop([6, 7], inplace=True)
+    #some_data1.drop([6, 7], inplace=True)
     some_data1["FiscalYear"] = some_data1["FiscalYear"].astype(str)
     return some_data1
 
@@ -95,7 +124,12 @@ def per_location_analysis(location, Drugs_Grouped_InjuryPlace):
     :param Drugs_Grouped_InjuryPlace: The dataframe for which we want to group the data containing the injury
     information
     :return: returning the dataframe with grouped up data based on drug and Injury
-    """
+
+    >>> df5=pd.read_csv("Doc_Test5.csv")
+    >>> per_location_analysis("Residence",df5)
+       FiscalYear  Heroin
+    0        2014       1
+     """
     deaths_residence = Drugs_Grouped_InjuryPlace.loc[(Drugs_Grouped_InjuryPlace["InjuryPlace"] == location)]
     df = pd.DataFrame(deaths_residence.groupby("FiscalYear")["Heroin"].count())
     df.reset_index(inplace=True)
