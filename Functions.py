@@ -11,8 +11,8 @@ def EDA_dataframe(df):
     :return:Prints the basic details like First few rows of that dataframe to see the content of that data frame.
     The number of rows and columns in that complete data frame
     The number of null values in each column - This helps us decide if we can drop these rows or do we need to perform
-    certain process on that particular data to include these rows
-    Datatype of each column to figure out how to process the values in that column
+    certain process on that particular data to include these rows.
+    Datatype of each column to figure out how to process the values in that column.
 
     >>> df=pd.read_csv("DocTest1.csv")
     >>> EDA_dataframe(df)
