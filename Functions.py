@@ -43,4 +43,9 @@ def grouped_drugs(some_data):
     return some_data1
 
 
-
+# function to perform detailed analysis per location
+def per_location_analysis(location, Drugs_Grouped_InjuryPlace):
+    deaths_residence = Drugs_Grouped_InjuryPlace.loc[(Drugs_Grouped_InjuryPlace["InjuryPlace"] == location)]
+    df = pd.DataFrame(deaths_residence.groupby("FiscalYear")["Heroin"].count())
+    df.reset_index(inplace=True)
+    return df
