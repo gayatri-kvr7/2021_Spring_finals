@@ -63,8 +63,54 @@ Even though by a very small margin, the ratio of death to hospital ratio is grea
 
 ![Capture-3](https://user-images.githubusercontent.com/77979984/116893605-c9bf6400-abf6-11eb-9f79-23c66f585129.PNG)
 
+The proportion of deaths vs the total number of people admitted for the consumption of the drug Heroin is 0.3 and the proportion of deaths vs the total number of people admitted for the consumption of the drug Cocaine is 0.29. Even though the difference between the two is very small, the proportion for Heroin is greater. This proves the hypothesis.
 
-This proves the hypothesis
+## Hypothesis III -People are more likely to get injured due to Heroin at any other place than at their Residence.
+
+In this Hypothesis we filtered the data for Heroin and grouped the deaths based on the location of death. 
+
+![newplot10](https://user-images.githubusercontent.com/77979984/117709529-a8321f80-b196-11eb-8c3d-6060e19df30c.png)
+
+Plotting a scatter plot for the same we can see that for any year the injuries occuring at each individuals residence is greater than any other location.
+Plotting another plot for age vs injury
+
+![newplot1010](https://user-images.githubusercontent.com/77979984/117710256-85ecd180-b197-11eb-8001-446deef9e637.png)
+
+Based on the above graph we can infer that GenX are also most likely to get injured at their residence than Hotel/Motel or a homeless shelter
+
+![download11](https://user-images.githubusercontent.com/77979984/117710673-001d5600-b198-11eb-9e37-896eb653c34f.png)
+
+From these graphs we came to a conclusion that Residence and hotel/motel are the two prime locations where people are prone to injuries
+Analysing each location one by one 
+
+![newplot11](https://user-images.githubusercontent.com/77979984/117710849-2e029a80-b198-11eb-87db-3b68c774d4ac.png)
+
+![newplot111](https://user-images.githubusercontent.com/77979984/117710866-34911200-b198-11eb-9bce-3b8f45d74242.png)
+
+After calculating and comparing the injuries caused by Heroin at Residence or Hotel we came to the conclusion that the residence injuries are greater then hotel/motel injuries by 159.375 % 
+This violates the hypthesis. Residence is the prime location where people are prone to injuries due to heroin consumption than any other location.
+
+## Hypothesis IV -New Haven has seen a greater decline in admission to deaths ratio due to Cocaine consumption in the year 2015-2016 than New London
+Firstly we counted the admission counts per city and we selected New Haven and New London for our analysis. Comparing both the cities and the admission rates: 
+
+![newplot12](https://user-images.githubusercontent.com/77979984/117712636-31972100-b19a-11eb-8458-ebc23d994bcf.png)
+
+Calculating the number of death counts for Heroin consumption in New Haven and New London. There has been an increase in the number of deaths due to Heroin consumption in New Haven and New London from 2015-2016. However, the change has been steeper in New Haven
+
+![newplot13](https://user-images.githubusercontent.com/77979984/117712753-59868480-b19a-11eb-84a4-29d87e5f25d1.png)
+
+Calculating the admission:death ratio
+
+![newplot14](https://user-images.githubusercontent.com/77979984/117712901-8b97e680-b19a-11eb-8db7-35dbf34646f8.png)
+
+![newplot16](https://user-images.githubusercontent.com/77979984/117713435-47591600-b19b-11eb-9e94-b7cf137e6745.png)
+
+The percentage change in the admission:death ratio for New Haven is 29% whereas for New London is 13%. Therefore, New Haven has been a greater decline in the ratio. This proves the hypothesis.
+
+
+
+
+
 
 
 
